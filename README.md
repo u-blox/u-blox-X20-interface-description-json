@@ -1,18 +1,6 @@
 # u-blox-X20-interface-description-json
 This repository provides a structured JSON-based description of the protocol interface for the u-blox X20 product firmwares.
 
-## Content
-
-### HPG Firmware
-[![version](https://img.shields.io/badge/firmware-HPG2.02-blue) ![version](https://img.shields.io/badge/json_revision-2.1-red)](HPG/u-blox_X20_HPG202.json)
-
-[![version](https://img.shields.io/badge/firmware-HPG2.00-blue) ![version](https://img.shields.io/badge/json_revision-2.1-red)](HPG/u-blox_X20_HPG200.json)
-
-### LAP Firmware
-[![version](https://img.shields.io/badge/firmware-LAP3.00-green) ![version](https://img.shields.io/badge/json_revision-2.0-red)](HPG/u-blox_X20_LAP300.json)
-
-[![version](https://img.shields.io/badge/firmware-LAP2.00-green) ![version](https://img.shields.io/badge/json_revision-2.0-red)](HPG/u-blox_X20_LAP200.json)
-
 ## Disclaimer
 Copyright © u-blox 
 
