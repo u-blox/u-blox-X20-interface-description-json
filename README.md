@@ -1,5 +1,12 @@
 # u-blox-X20-interface-description-json
 This repository provides a structured JSON-based description of the protocol interface for the u-blox X20 product firmwares.
+These JSON files serve as machine‑readable, structured interface specifications for u‑blox firmware. They complement traditional PDF documentation by providing a format that is easy for tools, automation pipelines, and applications to parse reliably and consistently.
+What they contain:
+* Configuration groups – hierarchical definitions of all configurable areas
+* Configuration keys – including types, ranges, defaults, constraints
+* Supported messages for all supported protocols – UBX, NMEA, RTCM, etc.
+* Allowed values, enumerations, and valid parameter ranges
+* Firmware and product metadata
 
 ## Disclaimer
 Copyright © u-blox 
