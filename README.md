@@ -1,4 +1,4 @@
-# u-blox-X20-interface-description-json
+# u-blox X20 interface description JSON
 This repository provides a structured JSON-based description of the protocol interface for the u-blox X20 product firmwares.
 These JSON files serve as machine‑readable, structured interface specifications for u‑blox firmware. They complement traditional PDF documentation by providing a format that is easy for tools, automation pipelines, and applications to parse reliably and consistently.
 What they contain:
