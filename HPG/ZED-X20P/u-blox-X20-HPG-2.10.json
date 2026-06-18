@@ -19389,6 +19389,168 @@
                "versionIdHex" : "0x01",
                "versionName" : "EPH"
             },
+            "GAL-OSNMA_MERKLE" : {
+               "description" : "Galileo Open Service Navigation Message Authentication (OSNMA) Merkle tree root assistance",
+               "detailedDescription" : "This message allows the delivery of the applicable Merkle tree root for Galileo OSNMA service. Supported Merkle trees have 16 leaves and the hash function is SHA-256. Information available in GSC website https://www.gsc-europa.eu/gsc-products/OSNMA/MT",
+               "groups" : [
+                  {
+                     "fields" : [
+                        {
+                           "detailedDescription" : "Message type (0x08 for this type)",
+                           "name" : "type",
+                           "offset" : 0,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "detailedDescription" : "Message version (0x00 for this version)",
+                           "name" : "version",
+                           "offset" : 1,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "bits" : [
+                              {
+                                 "mask" : 1,
+                                 "maskHex" : "0x01",
+                                 "name" : "applicabilityTime",
+                                 "num" : 1,
+                                 "shift" : 0,
+                                 "type" : "unsigned"
+                              }
+                           ],
+                           "detailedDescription" : "bitfield",
+                           "name" : "bitfield0",
+                           "offset" : 2,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "X1"
+                        },
+                        {
+                           "name" : "reserved0",
+                           "offset" : 3,
+                           "repeat" : 1,
+                           "reserved" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "detailedDescription" : "Merkle tree node corresponding to the root: (j,i)=(4,0)",
+                           "name" : "treeNode",
+                           "offset" : 4,
+                           "repeat" : 32,
+                           "size" : 1,
+                           "type" : "U1"
+                        }
+                     ],
+                     "name" : "group0",
+                     "offsetStr" : "0",
+                     "repeat" : "once",
+                     "size" : 36
+                  }
+               ],
+               "label" : "UBX-MGA-GAL-OSNMA_MERKLE",
+               "messageId" : 2,
+               "messageIdHex" : "0x02",
+               "messageName" : "GAL",
+               "sizeStr" : "36",
+               "type" : "input",
+               "versionId" : 8,
+               "versionIdHex" : "0x08",
+               "versionName" : "OSNMA_MERKLE"
+            },
+            "GAL-OSNMA_PUBKEY" : {
+               "description" : "Galileo Open Service Navigation Message Authentication (OSNMA) Public key assistance",
+               "detailedDescription" : "This message allows the delivery of the applicable public key for Galileo OSNMA service. Information available in GSC website https://www.gsc-europa.eu/gsc-products/OSNMA/PKI",
+               "groups" : [
+                  {
+                     "fields" : [
+                        {
+                           "detailedDescription" : "Message type (0x07 for this type)",
+                           "name" : "type",
+                           "offset" : 0,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "detailedDescription" : "Message version (0x00 for this version)",
+                           "name" : "version",
+                           "offset" : 1,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "bits" : [
+                              {
+                                 "mask" : 15,
+                                 "maskHex" : "0x0f",
+                                 "name" : "pubKeyId",
+                                 "num" : 4,
+                                 "shift" : 0,
+                                 "type" : "unsigned"
+                              },
+                              {
+                                 "mask" : 240,
+                                 "maskHex" : "0xf0",
+                                 "name" : "pubKeyType",
+                                 "num" : 4,
+                                 "shift" : 4,
+                                 "type" : "unsigned"
+                              }
+                           ],
+                           "detailedDescription" : "bitfield",
+                           "name" : "bitfield0",
+                           "offset" : 2,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "X1"
+                        },
+                        {
+                           "name" : "reserved0",
+                           "offset" : 3,
+                           "repeat" : 1,
+                           "reserved" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "detailedDescription" : "Public Key Point (HEX compressed format)",
+                           "name" : "pubKeyPoint",
+                           "offset" : 4,
+                           "repeat" : 67,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "name" : "reserved1",
+                           "offset" : 71,
+                           "repeat" : 1,
+                           "reserved" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        }
+                     ],
+                     "name" : "group0",
+                     "offsetStr" : "0",
+                     "repeat" : "once",
+                     "size" : 72
+                  }
+               ],
+               "label" : "UBX-MGA-GAL-OSNMA_PUBKEY",
+               "messageId" : 2,
+               "messageIdHex" : "0x02",
+               "messageName" : "GAL",
+               "sizeStr" : "72",
+               "type" : "input",
+               "versionId" : 7,
+               "versionIdHex" : "0x07",
+               "versionName" : "OSNMA_PUBKEY"
+            },
             "GAL-TIMEOFFSET" : {
                "description" : "Galileo GPS time offset assistance",
                "detailedDescription" : "This message allows the delivery of Galileo time to GPS time offset. See section AssistNow online in the integration manual for details.",
@@ -22155,6 +22317,8 @@
                "GAL-ALM",
                "GAL-TIMEOFFSET",
                "GAL-UTC",
+               "GAL-OSNMA_PUBKEY",
+               "GAL-OSNMA_MERKLE",
                "GLO-EPH",
                "GLO-ALM",
                "GLO-TIMEOFFSET",
@@ -22271,6 +22435,20 @@
                            ],
                            "versionId" : "0x05",
                            "versionName" : "UTC"
+                        },
+                        {
+                           "values" : [
+                              "7"
+                           ],
+                           "versionId" : "0x07",
+                           "versionName" : "OSNMA_PUBKEY"
+                        },
+                        {
+                           "values" : [
+                              "8"
+                           ],
+                           "versionId" : "0x08",
+                           "versionName" : "OSNMA_MERKLE"
                         }
                      ],
                      "check" : "U1"
@@ -26879,7 +27057,7 @@
                            "type" : "U1"
                         },
                         {
-                           "detailedDescription" : "Ionospheric model used: 0 = No model 1 = Klobuchar model transmitted by GPS 2 = SBAS model 3 = Klobuchar model transmitted by BeiDou 4 = NTCM model transmitted by Galileo 8 = Iono delay derived from dual frequency observations 11 = Default delay values",
+                           "detailedDescription" : "Ionospheric model used: 0 = No model 1 = Klobuchar model transmitted by GPS 2 = SBAS model 3 = Klobuchar model transmitted by BeiDou 4 = NTCM model transmitted by Galileo 7 = Locally estimated iono model 8 = Iono delay derived from dual-frequency observations 9 = Iono delay derived from multi-frequency observations 11 = Default delay values",
                            "name" : "ionoModel",
                            "offset" : 9,
                            "repeat" : 1,
@@ -27258,6 +27436,14 @@
                                  "name" : "indoorDet",
                                  "num" : 1,
                                  "shift" : 2,
+                                 "type" : "unsigned"
+                              },
+                              {
+                                 "mask" : 24,
+                                 "maskHex" : "0x18",
+                                 "name" : "selectiveL5State",
+                                 "num" : 2,
+                                 "shift" : 3,
                                  "type" : "unsigned"
                               },
                               {
@@ -30924,7 +31110,7 @@
                            "type" : "U1"
                         },
                         {
-                           "detailedDescription" : "Ionospheric model used: 0 = No model 1 = Klobuchar model transmitted by GPS 2 = SBAS model 3 = Klobuchar model transmitted by BeiDou 4 = NTCM model transmitted by Galileo 8 = Iono delay derived from dual frequency observations 11 = Default delay values",
+                           "detailedDescription" : "Ionospheric model used: 0 = No model 1 = Klobuchar model transmitted by GPS 2 = SBAS model 3 = Klobuchar model transmitted by BeiDou 4 = NTCM model transmitted by Galileo 7 = Locally estimated iono model 8 = Iono delay derived from dual-frequency observations 9 = Iono delay derived from multi-frequency observations 11 = Default delay values",
                            "name" : "ionoModel",
                            "offset" : 9,
                            "repeat" : 1,
@@ -35526,6 +35712,131 @@
                "versionIdHex" : "0x02",
                "versionName" : "DATA1"
             },
+            "SIG-DATA2" : {
+               "description" : "Signal security information",
+               "detailedDescription" : "Information related to the security, i.e. availability and integrity, of the signals.",
+               "groups" : [
+                  {
+                     "fields" : [
+                        {
+                           "detailedDescription" : "Message version (0x03 for this version)",
+                           "name" : "version",
+                           "offset" : 0,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "bits" : [
+                              {
+                                 "mask" : 1,
+                                 "maskHex" : "0x01",
+                                 "name" : "jamDetEnabled",
+                                 "num" : 1,
+                                 "shift" : 0,
+                                 "type" : "unsigned"
+                              },
+                              {
+                                 "mask" : 6,
+                                 "maskHex" : "0x06",
+                                 "name" : "jamState",
+                                 "num" : 2,
+                                 "shift" : 1,
+                                 "type" : "unsigned"
+                              },
+                              {
+                                 "mask" : 8,
+                                 "maskHex" : "0x08",
+                                 "name" : "spfDetEnabled",
+                                 "num" : 1,
+                                 "shift" : 3,
+                                 "type" : "unsigned"
+                              },
+                              {
+                                 "mask" : 112,
+                                 "maskHex" : "0x70",
+                                 "name" : "spfState",
+                                 "num" : 3,
+                                 "shift" : 4,
+                                 "type" : "unsigned"
+                              }
+                           ],
+                           "detailedDescription" : "Signal security flags, providing high-level jamming and spoofing detector information",
+                           "name" : "sigSecFlags",
+                           "offset" : 1,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "X1"
+                        },
+                        {
+                           "name" : "reserved0",
+                           "offset" : 2,
+                           "repeat" : 1,
+                           "reserved" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        },
+                        {
+                           "detailedDescription" : "The number of center frequencies we provide jamming information for (subsequent messages)",
+                           "name" : "jamNumCentFreqs",
+                           "offset" : 3,
+                           "repeat" : 1,
+                           "size" : 1,
+                           "type" : "U1"
+                        }
+                     ],
+                     "name" : "group0",
+                     "offsetStr" : "0",
+                     "repeat" : "once",
+                     "size" : 4
+                  },
+                  {
+                     "field" : "jamNumCentFreqs",
+                     "fields" : [
+                        {
+                           "bits" : [
+                              {
+                                 "mask" : 16777215,
+                                 "maskHex" : "0x00ffffff",
+                                 "name" : "centFreq",
+                                 "num" : 24,
+                                 "shift" : 0,
+                                 "type" : "unsigned",
+                                 "unit" : "kHz"
+                              },
+                              {
+                                 "mask" : 16777216,
+                                 "maskHex" : "0x01000000",
+                                 "name" : "jammed",
+                                 "num" : 1,
+                                 "shift" : 24,
+                                 "type" : "unsigned"
+                              }
+                           ],
+                           "detailedDescription" : "Jamming state of signals sharing a given center frequency Note that jamming information is only provided for center frequencies related to at least one in-use signal, for which a sufficient amount of information is currently available to judge if it is affected by jamming.",
+                           "name" : "jamStateCentFreq",
+                           "offset" : 0,
+                           "repeat" : 1,
+                           "size" : 4,
+                           "type" : "X4"
+                        }
+                     ],
+                     "name" : "jamPerCentFreq",
+                     "offsetStr" : "4",
+                     "repeat" : "by_field",
+                     "size" : 4
+                  }
+               ],
+               "label" : "UBX-SEC-SIG",
+               "messageId" : 9,
+               "messageIdHex" : "0x09",
+               "messageName" : "SIG",
+               "sizeStr" : "4 + jamNumCentFreqs*4",
+               "type" : "periodic_polled",
+               "versionId" : 3,
+               "versionIdHex" : "0x03",
+               "versionName" : "DATA2"
+            },
             "SIG-POLL0" : {
                "groups" : [],
                "label" : "UBX-SEC-SIG",
@@ -35702,6 +36013,7 @@
                "OSNMA-DATA2",
                "SIG-POLL0",
                "SIG-DATA1",
+               "SIG-DATA2",
                "SIGLOG-POLL0",
                "SIGLOG-DATA1",
                "UNIQID-POLL0",
@@ -35752,6 +36064,13 @@
                                     ],
                                     "versionId" : "0x02",
                                     "versionName" : "DATA1"
+                                 },
+                                 {
+                                    "values" : [
+                                       "3"
+                                    ],
+                                    "versionId" : "0x03",
+                                    "versionName" : "DATA2"
                                  },
                                  {
                                     "default" : true,
@@ -36538,6 +36857,6 @@
          "scope" : "u-blox X20 HPG 2.10"
       },
       "formatVersion" : "2.1",
-      "timestamp" : "2026-05-22T09:58:24+0000"
+      "timestamp" : "2026-06-17T11:35:15+0000"
    }
 }
