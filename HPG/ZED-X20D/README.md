@@ -1,4 +1,1 @@
-[| Firmware version | JSON format version | JSON file |
-| --- | --- | --- |
-| HDG 2.00 | 2.1 | https://github.com/u-blox/u-blox-X20-interface-description-json/blob/main/HDG/u-blox-X20-HDG-2.00.json |
-](https://img.shields.io/badge/firmware-HDG2.00-blue https://img.shields.io/badge/revision-2.1-red](https://github.com/u-blox/u-blox-X20-interface-description-json/blob/main/HPG/ZED-X20D/u-blox-X20-HDG-2.00.json))
+https://img.shields.io/badge/firmware-HDG2.00-blue https://img.shields.io/badge/revision-2.1-red](https://github.com/u-blox/u-blox-X20-interface-description-json/blob/main/HPG/ZED-X20D/u-blox-X20-HDG-2.00.json)
