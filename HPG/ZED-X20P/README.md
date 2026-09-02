@@ -1,1 +1,2 @@
 [![version](https://img.shields.io/badge/firmware-HPG2.10-blue) ![version](https://img.shields.io/badge/revision-2.1-red)](https://github.com/u-blox/u-blox-X20-interface-description-json/blob/main/HPG/ZED-X20P/u-blox-X20-HPG-2.10.json)
+[![version](https://img.shields.io/badge/firmware-HPG2.11-blue) ![version](https://img.shields.io/badge/revision-2.1-red)](https://github.com/u-blox/u-blox-X20-interface-description-json/blob/main/HPG/ZED-X20P/u-blox-X20-HPG-2.11.json)
